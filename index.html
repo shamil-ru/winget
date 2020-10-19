@@ -1,0 +1,32 @@
+<h1 id="custom-source-repository-for-the-wingetexe">Custom Source Repository for the winget.exe</h1>
+
+<p>This repository contains an example of a custom source repository for the <a href="https://github.com/microsoft/winget-cli">Windows Package Manager Client</a> (aka <code class="highlighter-rouge">winget.exe</code>). We demonstate how to install a dummy <code class="highlighter-rouge">fake-app</code> application using <code class="highlighter-rouge">winget</code> from a non-standard location.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>Windows 10 64-bit and later</li>
+  <li><a href="https://github.com/microsoft/winget-cli/releases">Windows Package Manager Client</a></li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<ul>
+  <li>Configure the Windows to accept third-party applications:</li>
+</ul>
+
+<p><img src="/img/win-settings.png" alt="Windows Settings" width="800" /></p>
+
+<ul>
+  <li>
+    <p>Run in command line:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  winget source add fake-repo https://winget.shamil.ru
+  winget install fake-app
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>Source code is licensed under the <a href="LICENSE">MIT license</a>.</p>
