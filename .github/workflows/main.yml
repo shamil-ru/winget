@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Prepare
+        run: |
+          sudo apt-get update && sudo apt-get install -y jekyll
+          mkdir -p deploy/
+
+
+      - name: Generate `index.html`
+        run: |
+          jekyll build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          cname: winget.shamil.ru
+          force_orphan: true
+          user_name: 'shamil-ru'
+          user_email: 'shamil-ru@users.noreply.github.com'

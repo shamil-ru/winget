@@ -1,0 +1,4 @@
+defaults:
+  source: .
+  scope:
+    path: "README.md"
